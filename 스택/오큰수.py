@@ -8,3 +8,21 @@ A = [9, 5, 4, 8]인 경우에는 NGE(1) = -1, NGE(2) = 8, NGE(3) = 8, NGE(4) = -
 '''
 import sys
 
+T = int(input(""))
+num_list = list(map(str, sys.stdin.readline().split()))
+new_list = []
+
+for i in range(T):
+    if len(num_list) == 1:
+        new_list.append("-1")
+        break
+    d = num_list.pop(0)
+    if d < num_list[0]:
+        new_list.append(num_list[0])
+    else:
+        if d > max(num_list):
+            new_list.append("-1")
+        else:
+            new_list.append(max(num_list))
+
+print(" ".join(new_list))
