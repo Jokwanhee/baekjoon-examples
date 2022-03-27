@@ -15,5 +15,13 @@ a - 1000, b - 70, c - 170
 (b * n) + a > c * n ==> 횟수
 
 '''
+import sys
 
+A, B, C = map(int, sys.stdin.readline().split())
 
+if B < C:
+    N = C - B
+    result = (A+N) // N
+    print(result)
+else:
+    print(-1)
